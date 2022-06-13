@@ -1,0 +1,34 @@
+#title{
+    text-align: center;
+}
+
+#mainScreen{
+    background-color: #5F5F5F;
+    width: 30%;
+    border-color: aqua;
+}
+
+#numbers{
+    padding: 20px;
+    margin: 5px;
+}
+
+#container-number{
+    padding-left: 50px;
+}
+
+#button-cancel:hover{
+    background-color: crimson;
+    color: white;
+}
+
+#button-edit:hover{
+    background-color: #CFC10F;
+    color: white;
+}
+
+#button-continue:hover{
+    background-color: #3ECF0F;
+    color: white;
+}
+

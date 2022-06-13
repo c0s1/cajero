@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Cajero</title>    
+</head>
+<body>
+    <div id="app">
+        <h3 id="title">Cajero automático</h3>
+        <div class="container" id="mainScreen">
+            <div class="row">
+                <div class="col m-2">
+                    <input v-model="numberAccount" class="form-control" placeholder="Número de cuenta" id="input-number" required minlength="1" maxlength="4">
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col m-2">
+                        <input v-model="numberKey" type="number" max="4" class="form-control" placeholder="Clave" id="input-number" required>
+                    </div>
+                </div>
+                <div class="container" id="container-number">
+                    <div class="row">
+                        <div class="col">
+                            <button @click="enterKey(7)" type="button" class="btn btn-primary" id="numbers">7</button>
+                            <button @click="enterKey(8)" type="button" class="btn btn-primary" id="numbers">8</button>
+                            <button @click="enterKey(9)" type="button" class="btn btn-primary" id="numbers">9</button>
+                            <button @click="pressCancel" type="button" class="btn btn-light mx-3" id="button-cancel">Cancelar</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button @click="enterKey(4)" type="button" class="btn btn-primary" id="numbers">4</button>
+                            <button @click="enterKey(5)" type="button" class="btn btn-primary" id="numbers">5</button>
+                            <button @click="enterKey(6)" type="button" class="btn btn-primary" id="numbers">6</button>
+                            <button @click="pressEdit" type="button" class="btn btn-light mx-3" id="button-edit">Corregir</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button @click="enterKey(1)" type="button" class="btn btn-primary" id="numbers">1</button>
+                            <button @click="enterKey(2)" type="button" class="btn btn-primary" id="numbers">2</button>
+                            <button @click="enterKey(3)" type="button" class="btn btn-primary" id="numbers">3</button>
+                            <button type="button" class="btn btn-light mx-3" id="button-continue">Continuar</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" id="numbers">*</button>
+                            <button @click="enterKey(0)" type="button" class="btn btn-primary" id="numbers">0</button>
+                            <button type="button" class="btn btn-primary" id="numbers">*</button>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>               
+    </div>    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.0-alpha.4/vue.js"></script>
+    <script src="../backend/main.js"></script>
+</html>
