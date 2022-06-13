@@ -5,7 +5,15 @@
 #mainScreen{
     background-color: #5F5F5F;
     width: 30%;
-    border-color: aqua;
+    margin-bottom: 50px;
+    /* border: solid #CFC10F; */
+}
+
+#operations{
+    background-color: #fff;
+    width: 30%;
+    margin-top: 100px;
+    margin: center;
 }
 
 #numbers{

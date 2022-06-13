@@ -12,15 +12,15 @@
 <body>
     <div id="app">
         <h3 id="title">Cajero automático</h3>
-        <div class="container" id="mainScreen">
+        <div v-if="watch==0" class="container" id="mainScreen">
             <div class="row">
                 <div class="col m-2">
-                    <input v-model="numberAccount" class="form-control" placeholder="Número de cuenta" id="input-number" required minlength="1" maxlength="4">
+                    <input v-model="numberAccount" type="number" class="form-control" placeholder="Número de cuenta" id="input-number" required minlength="1" maxlength="4">
                 </div>
             </div>
                 <div class="row">
                     <div class="col m-2">
-                        <input v-model="numberKey" type="number" max="4" class="form-control" placeholder="Clave" id="input-number" required>
+                        <input v-model="numberKey" type="password" class="form-control" placeholder="Clave" id="input-number" required>
                     </div>
                 </div>
                 <div class="container" id="container-number">
@@ -45,7 +45,7 @@
                             <button @click="enterKey(1)" type="button" class="btn btn-primary" id="numbers">1</button>
                             <button @click="enterKey(2)" type="button" class="btn btn-primary" id="numbers">2</button>
                             <button @click="enterKey(3)" type="button" class="btn btn-primary" id="numbers">3</button>
-                            <button type="button" class="btn btn-light mx-3" id="button-continue">Continuar</button>
+                            <button @click="correctKey" type="button" class="btn btn-light mx-3" id="button-continue">Continuar</button>
                         </div>
                     </div>
                     <div class="row">
@@ -57,7 +57,48 @@
                     </div>
                 </div>
                 
-        </div>               
+        </div>
+        
+        <div v-if="watch==1" class="container" id="operations">
+            <div class="row">
+                <div class="col">
+                    <button @click="watchConsign" type="button" class="btn btn-success">Consignar</button>
+                </div>
+                <div class="col">
+                    <button @click="watchRetire" type="button" class="btn btn-success">Retirar</button>
+                </div>
+                <div class="col">
+                    <button @click="out" type="button" class="btn btn-success">Salir</button>
+                </div>
+            </div>
+            <div v-if="oWatch==1" class="row">
+                <div class="col my-3">
+                    <input v-model="valueConsign" type="number" class="form-control" placeholder="Valor" id="input-number" required>
+                </div>
+                <div class="col my-3">
+                    <button type="button" class="btn btn-danger">Enviar</button>
+                </div>
+            </div>
+            <div v-if="oWatch==2" class="row">
+                <div class="col my-3">
+                    <label for="">cantidad $10.000</label>
+                    <input type="number" class="form-control" placeholder="Valor" id="input-number" required>
+                </div>
+                <div class="col my-3">
+                    <label for="">cantidad $20.000</label>
+                    <input type="number" class="form-control" placeholder="Valor" id="input-number" required>
+                </div>
+                <div class="col my-3">
+                    <label for="">cantidad $50.000</label>
+                    <input type="number" class="form-control" placeholder="Valor" id="input-number" required>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-danger">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>    
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.0-alpha.4/vue.js"></script>
