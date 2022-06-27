@@ -20,7 +20,7 @@
             </div>
                 <div class="row">
                     <div class="col m-2">
-                        <input v-model="numberKey" type="password" class="form-control" placeholder="Clave" id="input-number" required>
+                        <input v-model="numberKey" type="password" class="form-control" placeholder="Clave" id="input-number" required minlength="1" maxlength="4">
                     </div>
                 </div>
                 <div class="container" id="container-number">
@@ -76,7 +76,7 @@
                     <input v-model="valueConsign" type="number" class="form-control" placeholder="Valor" id="input-number" required>
                 </div>
                 <div class="col my-3">
-                    <button type="button" class="btn btn-danger">Enviar</button>
+                    <button @click="consign" type="button" class="btn btn-danger">Enviar</button>
                 </div>
             </div>
             <div v-if="oWatch==2" class="row">
